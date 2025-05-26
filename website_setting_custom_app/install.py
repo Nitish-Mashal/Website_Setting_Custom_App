@@ -3,8 +3,8 @@ import frappe
 def update_website_settings():
     file_url = "/files/QB Logo.png"
     file_name = "QB Logo.png"
-    full_path = frappe.get_app_path("your_app_name", "public", "files", file_name)
-
+    full_path = frappe.get_app_path("website_setting_custom_app", "public", "files", file_name)
+    
     # Delete existing file (optional cleanup)
     existing = frappe.db.get_all("File", filters={"file_url": file_url})
     for file in existing:
