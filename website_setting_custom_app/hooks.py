@@ -5,6 +5,9 @@ app_description = "website_setting_custom_app"
 app_email = "nitishmashal0@gmail.com"
 app_license = "mit"
 
+
+app_include_js = "/assets/website_setting_custom_app/js/logo_redirect.js"
+
 # Apps
 # ------------------
 
