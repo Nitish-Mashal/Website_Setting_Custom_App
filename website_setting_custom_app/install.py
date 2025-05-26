@@ -1,24 +1,29 @@
 import frappe
 
 def update_website_settings():
-    # Upload logo if not already uploaded
     file_url = "/files/QB Logo.png"
+    file_name = "QB Logo.png"
+    full_path = frappe.get_app_path("your_app_name", "public", "files", file_name)
 
-    # Ensure file exists
-    if not frappe.db.exists("File", {"file_url": file_url}):
-        with open(frappe.get_app_path("your_app_name", "public", "files", "QB Logo.png"), "rb") as f:
-            frappe.get_doc({
-                "doctype": "File",
-                "file_name": "QB Logo.png",
-                "attached_to_doctype": None,
-                "attached_to_name": None,
-                "is_private": 0,
-                "content": f.read(),
-            }).insert(ignore_permissions=True)
+    # Delete existing file with same file_url (optional, to avoid duplicates)
+    existing = frappe.db.get_all("File", filters={"file_url": file_url})
+    for file in existing:
+        frappe.delete_doc("File", file.name, force=True)
 
-    # Update Website Settings
+    # Upload (or replace) logo file
+    with open(full_path, "rb") as f:
+        frappe.get_doc({
+            "doctype": "File",
+            "file_name": file_name,
+            "attached_to_doctype": None,
+            "attached_to_name": None,
+            "is_private": 0,
+            "content": f.read(),
+        }).insert(ignore_permissions=True)
+
+    # Update Website Settings with new logo
     ws = frappe.get_single("Website Settings")
-    ws.app_logo = file_url
+    ws.web_logo = file_url  # use .app_logo if you added a custom field
     ws.save()
 
     frappe.db.commit()
