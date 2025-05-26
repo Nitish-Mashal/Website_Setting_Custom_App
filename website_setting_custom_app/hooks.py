@@ -10,6 +10,8 @@ app_include_js = "/assets/website_setting_custom_app/js/logo_redirect.js"
 
 after_install = "website_setting_custom_app.install.update_website_settings"
 
+before_uninstall = "website_setting_custom_app.uninstall.remove_website_logos"
+
 # Apps
 # ------------------
 
