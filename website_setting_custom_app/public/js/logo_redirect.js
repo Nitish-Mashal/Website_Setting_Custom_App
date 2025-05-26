@@ -1,3 +1,4 @@
+console.log("✅ Loaded NEW logo_redirect.js");
 document.addEventListener("DOMContentLoaded", function () {
     const observer = new MutationObserver(() => {
         const logo = document.querySelector('header .app-logo');
