@@ -6,7 +6,9 @@ app_email = "nitishmashal0@gmail.com"
 app_license = "mit"
 
 
-app_include_js = "/assets/website_setting_custom_app/js/logo_redirect.js"
+# app_include_js = "/assets/website_setting_custom_app/js/logo_redirect.js"
+
+website_include_js = "/assets/website_setting_custom_app/js/logo_redirect.js"
 
 # after_install = "website_setting_custom_app.install.update_website_settings"
 

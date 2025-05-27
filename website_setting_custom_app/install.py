@@ -101,28 +101,28 @@ def toggle_website_settings(apply=True):
         ws.app_name = "Quantumberg Technologies Pvt Ltd"
 
         # Add custom brand HTML
-        ws.brand_html = """
-        <a href="/app/home" style="display: flex; align-items: center;">
-            <img src="/files/QB Logo.png" style="max-height: 30px;">
-        </a>
+        # ws.brand_html = """
+        # <a href="/app/home" style="display: flex; align-items: center;">
+        #     <img src="/files/QB Logo.png" style="max-height: 30px;">
+        # </a>
 
-        <style>
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 8px;
-        }
+        # <style>
+        # .navbar {
+        #     display: flex;
+        #     align-items: center;
+        #     justify-content: space-between;
+        #     padding: 8px;
+        # }
 
-        .navbar a img {
-            max-height: 40px;
-        }
+        # .navbar a img {
+        #     max-height: 40px;
+        # }
 
-        .navbar .navbar-toggler {
-            margin-left: auto;
-        }
-        </style>
-        """
+        # .navbar .navbar-toggler {
+        #     margin-left: auto;
+        # }
+        # </style>
+        # """
     else:
         # On app uninstall
         for file_url in file_urls.values():
@@ -135,7 +135,7 @@ def toggle_website_settings(apply=True):
         ws.splash_image = None
         ws.favicon = None
         ws.app_name = None
-        ws.brand_html = None  # Clear the brand_html
+        # ws.brand_html = None
 
     ws.save()
     frappe.db.commit()
