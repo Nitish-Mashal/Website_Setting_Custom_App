@@ -137,10 +137,10 @@ def toggle_all_settings(apply=True):
             "Q_Logo.png": "website_setting_custom_app"
         }
         pwa_files = {
-            "manifest.json": "qdynamics_pwa_app",
-            "logo-512.png": "qdynamics_pwa_app",
-            "logo-192.png": "qdynamics_pwa_app",
-            "logo.svg": "qdynamics_pwa_app"
+            "manifest.json": "website_setting_custom_app",
+            "logo-512.png": "website_setting_custom_app",
+            "logo-192.png": "website_setting_custom_app",
+            "logo.svg": "website_setting_custom_app"
         }
 
         for file_name, app in {**branding_files, **pwa_files}.items():
