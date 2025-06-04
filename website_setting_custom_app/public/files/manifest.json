@@ -1,75 +1,71 @@
 {
-    "name": "Education Quantumberg",
-    "short_name": "Quantumberg",
-    "start_url": "/",
-    "scope": "/",
-    "display": "standalone",
-    "background_color": "#000000",
-    "theme_color": "#000000",
-    "description": "Mobile APP PWA for Quantumberg / Education",
-    "categories": [
-        "business",
-        "productivity",
-        "utilities"
-    ],
-    "icons": [
-        {
-            "src": "/files/logo.svg",
-            "sizes": "48x48 72x72 96x96 128x128 256x256 512x512",
-            "type": "image/svg+xml",
-            "purpose": "any"
-        },
-        {
-            "src": "/files/logo-512.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "any"
-        },
-        {
-            "src": "/files/logo-192.png",
-            "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "any"
-        }
-    ],
-    "id": "Quantumberg",
-    "dir": "auto",
-    "lang": "en",
-    "orientation": "any",
-    "prefer_related_applications": false,
-    "handle_links": "preferred",
-    "launch_handler": {
-        "client_mode": "navigate-existing"
+  "name": "Q-Dynamics PWA App",
+  "short_name": "Quantumberg",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "Mobile APP PWA for Quantumberg / Q-Dynamics",
+  "categories": ["business", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/files/logo.svg",
+      "sizes": "48x48 72x72 96x96 128x128 256x256 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
     },
-    "shortcuts": [
-        {
-            "name": "Todo",
-            "url": "/app/todo",
-            "description": "Todo List",
-            "icons": [
-                {
-                    "src": "/files/logo.svg",
-                    "type": "image/svg+xml",
-                    "purpose": "any"
-                }
-            ]
-        },
-        {
-            "name": "Tasks",
-            "url": "/app/task",
-            "description": "Tasks List",
-            "icons": [
-                {
-                    "src": "/files/logo.svg",
-                    "type": "image/svg+xml",
-                    "purpose": "any"
-                }
-            ]
-        }
-    ],
-    "serviceworker": {
-        "src": "/sw.js",
-        "scope": "/",
-        "update_via_cache": "all"
+    {
+      "src": "/files/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/files/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
     }
+  ],
+  "id": "Quantumberg",
+  "dir": "auto",
+  "lang": "en",
+  "orientation": "any",
+  "prefer_related_applications": false,
+  "handle_links": "preferred",
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "shortcuts": [
+    {
+      "name": "Todo",
+      "url": "/app/todo",
+      "description": "Todo List",
+      "icons": [
+        {
+          "src": "/files/logo.svg",
+          "type": "image/svg+xml",
+          "purpose": "any"
+        }
+      ]
+    },
+    {
+      "name": "Tasks",
+      "url": "/app/task",
+      "description": "Tasks List",
+      "icons": [
+        {
+          "src": "/files/logo.svg",
+          "type": "image/svg+xml",
+          "purpose": "any"
+        }
+      ]
+    }
+  ],
+  "serviceworker": {
+    "src": "/sw.js",
+    "scope": "/",
+    "update_via_cache": "all"
+  }
 }
