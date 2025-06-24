@@ -18,6 +18,23 @@ after_install = "website_setting_custom_app.install.after_install"
 
 before_uninstall = "website_setting_custom_app.install.before_uninstall"
 
+# doc_events = {
+#     "Notification Log": {
+#         "after_insert": "website_setting_custom_app.api.custom_log.create_log_from_notification"
+#     },
+#     "Event": {
+#         "after_insert": "website_setting_custom_app.api.custom_log.create_log_from_event"
+#     }
+# }
+
+# app_include_js = "/assets/website_setting_custom_app/js/custom_notification_redirect.js"
+
+doc_events = {
+    "Announcement": {
+        "after_insert": "website_setting_custom_app.api.announcement.publish_announcement"
+    }
+}
+
 
 # Apps
 # ------------------
