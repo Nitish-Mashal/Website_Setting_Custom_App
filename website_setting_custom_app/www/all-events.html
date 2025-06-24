@@ -1,0 +1,23 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<!-- <h2 class="mb-4">All Events</h2> -->
+
+{% set events = frappe.get_list("Event", fields=["subject", "description", "starts_on"], order_by="starts_on desc") %}
+
+{% if events %}
+  <div class="">
+    {% for event in events %}
+      <div class="p-4 border-b">
+        <div class="flex justify-between items-center mb-1">
+          <div class="font-bold text-lg" style="font-size: 20px; color: black; font-weight: 600;">{{ event.subject }}</div>
+          <div class="text-sm text-gray-500">{{ event.starts_on.strftime('%d-%b-%Y') }}</div>
+        </div>
+        <p class="text-base">{{ event.description }}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>No events found.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+
+{% set announcements = frappe.get_list("Announcement", 
+    fields=["name", "title", "description", "creation", "route", "published"], 
+    filters={"published": 1},
+    order_by="creation desc") %}
+
+{% if announcements %}
+  <div class="pt-5 max-w-4xl mx-auto">
+    {% for ann in announcements %}
+      <div class="p-4 border-b">
+        <div class="flex justify-between items-center mb-1">
+          <div class="font-bold text-lg text-black" style="font-size: 20px; color: black; font-weight: 600;">{{ ann.title }}</div>
+          <div class="text-sm text-gray-500">{{ ann.creation.strftime('%d-%b-%Y') }}</div>
+        </div>
+        {% set plain_description = ann.description | striptags %}
+        <p class="text-base text-gray-700">
+          {{ plain_description[:100] }}
+          {% if plain_description|length > 100 %}...{% endif %}
+        </p>
+        
+        {% if plain_description|length > 100 %}
+        <a href="/{{ ann.route }}" class="text-blue-600 hover:underline text-sm">Know More</a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p class="text-center text-gray-500">No announcements found.</p>
+{% endif %}
+
+{% endblock %}

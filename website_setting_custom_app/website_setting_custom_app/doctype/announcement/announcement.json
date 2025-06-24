@@ -1,0 +1,82 @@
+{
+  "actions": [],
+  "allow_guest_to_view": 1,
+  "allow_rename": 1,
+  "creation": "2025-06-18 17:01:59.869333",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "announcement_section",
+    "title",
+    "created_date",
+    "description",
+    "published",
+    "route"
+  ],
+  "fields": [
+    {
+      "fieldname": "title",
+      "fieldtype": "Data",
+      "label": "Title"
+    },
+    {
+      "fieldname": "created_date",
+      "fieldtype": "Date",
+      "label": "Created date"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Text Editor",
+      "label": "Description"
+    },
+    {
+      "fieldname": "announcement_section",
+      "fieldtype": "Section Break",
+      "label": "Announcement"
+    },
+    {
+      "default": "0",
+      "fieldname": "published",
+      "fieldtype": "Check",
+      "label": "Published"
+    },
+    {
+      "fieldname": "route",
+      "fieldtype": "Data",
+      "hidden": 1,
+      "label": "Route"
+    }
+  ],
+  "grid_page_length": 50,
+  "has_web_view": 1,
+  "index_web_pages_for_search": 1,
+  "is_published_field": "published",
+  "links": [],
+  "modified": "2025-06-20 11:49:13.683785",
+  "modified_by": "Administrator",
+  "module": "Website Setting Custom App",
+  "name": "Announcement",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "route": "announcements",
+  "row_format": "Dynamic",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "website_search_field": "title",
+  "web_view_template": "announcement",
+  "web_view_title_field": "title"
+}
